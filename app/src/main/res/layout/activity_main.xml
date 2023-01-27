@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FB"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pop_bold"
+        android:text="RealTimeOCR"
+        android:textColor="#e74c3c"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/pop_reg"
+            android:text="Target Adjustment"
+            android:textColor="#BDC3C7"
+            android:textSize="16sp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="1dp"
+            android:clipToPadding="false"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            android:layout_margin="4dp"
+            app:cardPreventCornerOverlap="false">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/xAddSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:stepSize="1"
+                        android:value="10.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0"
+                        app:haloRadius="0dp"
+                        app:thumbRadius="0dp"
+                        app:tickVisible="false"
+                        app:trackColorActive="#e74c3c"
+                        app:trackColorInactive="#E4E4E4"
+                        android:layout_weight="1"
+                        app:trackHeight="9dp" />
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/yAddSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:stepSize="1"
+                        android:value="10.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0"
+                        app:haloRadius="0dp"
+                        app:thumbRadius="0dp"
+                        app:tickVisible="false"
+                        app:trackColorActive="#e74c3c"
+                        app:trackColorInactive="#E4E4E4"
+                        android:layout_weight="1"
+                        app:trackHeight="9dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="x axis"
+                        android:fontFamily="@font/pop_bold"
+                        android:textColor="#BDC3C7"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_weight="1"
+                        android:text="y axis"
+                        android:fontFamily="@font/pop_bold"
+                        android:textColor="#BDC3C7"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/wAddSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:stepSize="1"
+                        android:value="10.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0"
+                        app:haloRadius="0dp"
+                        app:thumbRadius="0dp"
+                        app:tickVisible="false"
+                        app:trackColorActive="#e74c3c"
+                        app:trackColorInactive="#E4E4E4"
+                        android:layout_weight="1"
+                        app:trackHeight="9dp" />
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/hAddSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:stepSize="1"
+                        android:value="10.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0"
+                        app:haloRadius="0dp"
+                        app:thumbRadius="0dp"
+                        app:tickVisible="false"
+                        app:trackColorActive="#e74c3c"
+                        app:trackColorInactive="#E4E4E4"
+                        android:layout_weight="1"
+                        app:trackHeight="9dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="width"
+                        android:fontFamily="@font/pop_bold"
+                        android:textColor="#BDC3C7"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_weight="1"
+                        android:text="height"
+                        android:fontFamily="@font/pop_bold"
+                        android:textColor="#BDC3C7"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/pop_reg"
+            android:text="Regex String"
+            android:textColor="#BDC3C7"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textStyle="normal"
+                    android:hint="Test"
+                    android:fontFamily="@font/pop_bold"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:textColor="@color/black"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/pop_reg"
+            android:text="Target Check"
+            android:textColor="#BDC3C7"
+            android:textSize="16sp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            android:clipChildren="true">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivTarget"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#BDC3C7" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCheckTarget"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:textAllCaps="false"
+                    android:elevation="5dp"
+                    android:shadowDy="1"
+                    android:shadowDx="1"
+                    android:shadowRadius="5"
+                    android:shadowColor="@color/black"
+                    android:padding="0dp"
+                    android:text="Check"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/pop_reg"
+            android:text="String History"
+            android:textColor="#BDC3C7"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStart"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:text="Start"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStop"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:text="Stop"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/btnStart"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
